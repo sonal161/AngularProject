@@ -1,0 +1,73 @@
+<!-- 
+<form class="modal-content animate" class="form" #loginForm="ngForm" [formGroup]="formLogIn" (validSubmit)="onSubmit()">
+		<div class="imgcontainer" > 
+
+		  <img class="img-fluid" style="width: 100px;" src="/assets/user.png" alt="Avatar" class="avatar">
+		</div>
+	
+		<div class="container">
+		  <label for="uname"><b>Username</b></label>
+		  <input formControlName="UserName"
+          type="text" placeholder="Enter Username" name="uname" required>
+		  <div *ngIf="formLogIn.controls['UserName'].invalid && formLogIn.controls['UserName'].touched" class="alert alert-danger">
+			<div *ngIf="formLogIn.controls['UserName'].errors">
+		   User Name is required.
+		  </div>
+	
+		  <label for="psw"><b>Password</b></label>
+		  <input formControlName="Password"
+          type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+		  <div *ngIf="formLogIn.controls['Password'].invalid && formLogIn.controls['Password'].touched" class="alert alert-danger">
+			<div *ngIf="formLogIn.controls['Password'].errors">
+		   Password is required.
+		  </div>
+
+		  <button type="submit">Login</button>
+		  
+		</div>
+	
+		<div class="container" style="background-color:#f1f1f1; text-align: center;">
+		  <label>Not a member?</label>
+          <a  class="forgot" (click)="moveToRegister()" style="color: blueviolet;">Signup Now</a>
+		</div>
+	  </form>
+      
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div> -->
+
+ 
+ <div class="wrapper" >
+	<div class="container">
+		<h1>Log In</h1>
+		
+		<form class="form" #loginForm="ngForm" [formGroup]="formLogIn" (validSubmit)="onSubmit()" style="border:1px solid rgb(2, 42, 68); padding: 20px; background-color:rgb(186, 187, 247)">
+			<div class="imgcontainer" > 
+
+				<img class="img-fluid" style="width: 100px;" src="/assets/user.png" alt="Avatar" class="avatar">
+			  </div>
+
+			<input type="text" placeholder="Username" formControlName="UserName">
+      <div *ngIf="formLogIn.controls['UserName'].invalid && formLogIn.controls['UserName'].touched" class="alert alert-danger">
+        <div *ngIf="formLogIn.controls['UserName'].errors">
+       User Name is required.
+      </div>
+    </div>
+
+			<input type="password" placeholder="Password" formControlName="Password">
+      <div *ngIf="formLogIn.controls['Password'].invalid && formLogIn.controls['Password'].touched" class="alert alert-danger">
+        <div *ngIf="formLogIn.controls['Password'].errors">
+       Password is required.
+      </div>
+    </div>
+
+			<button type="submit" id="login-button">Login</button>
+      
+
+      <br>
+      <a  class="forgot" (click)="moveToRegister()" >Create an Account?</a>
+      
+		</form>
+	</div>
+	
+</div>
